@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  // const [data, setData] = useState([])
+  // const Flag = async () => {
+  //   try {
+  //     const response = await fetch('https://www.travel-advisory.info/api')
+  //     const data = await response.json();
+  //     setData(data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+  // useEffect(() => {
+  //   Flag()
+  // }, [])
+
+  // const flagUrl = 'https://countryflagsapi.com/png/tr'
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
