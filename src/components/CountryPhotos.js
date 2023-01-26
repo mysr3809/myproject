@@ -1,5 +1,5 @@
 import React from 'react';
-import "CountryPhotos.css"
+import "./CountryPhotos.css"
 
 const CountryPhotos = () => {
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import CountryInfo from "./components/CountryInfo";
+import CountryHome from "./components/CountryHome";
 import Favorites from "./components/Favorites"
 import './App.css';
 
@@ -17,7 +17,7 @@ function App() {
       <div className="content">
         <Router>
           <Routes>
-            <Route exact path="/" element={<CountryInfo />} />
+            <Route exact path="/" element={<CountryHome />} />
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </Router>

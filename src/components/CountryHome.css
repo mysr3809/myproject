@@ -1,0 +1,39 @@
+.homePage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.countryContent {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  top: 50%;
+  position: absolute;
+  transform: translate(0, -50%);
+  background-color: #ffffff4a;
+  text-align: center;
+}
+
+.input {
+  background-color: aliceblue;
+  border-radius: 5px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 10px);
+}
+
+.countryInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  border: 1px solid red;
+  width: 100%;
+  height: 65vh;
+  top: 100px;
+}
+.infoLeft{
+  
+}
