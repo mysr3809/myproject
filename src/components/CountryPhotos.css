@@ -1,0 +1,12 @@
+.carouselInner{
+  width: 105% !important;
+    height: 60vh !important;
+}
+.carouselInner img{
+  width: 100% !important;
+  height: 100% !important;
+
+}
+.carousel-control-prev-icon,.carousel-control-next-icon, .carousel-indicators button{
+  background-color: blue !important;
+}

@@ -60,12 +60,18 @@ text-align: start;
 .leftContent .leftInfo{
 padding-left: 20px;
 }
+.leftInfo a{
+  color: black;
+}
 .leftContent img{
   position: relative;
   left: 50%;
   transform: translate(-50%, 0px);
-  width: 30vw !important;
+  width: 20vw !important;
 }
 .infoRight h2{
   border-bottom: 1px solid #243763;
+}
+.startImg{
+  
 }
