@@ -4,6 +4,8 @@ import CountryInfo from "./CountryInfo";
 import CountryPhotos from './CountryPhotos';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
+import Button2 from 'react-bootstrap/Button';
+
 
 
 
@@ -25,17 +27,24 @@ const CountryHome = () => {
             e.preventDefault();
             setCountryName(e.target.value)
           }} />
-          <Button onClick={() => getData()}>Search</Button>
+          <Button className='searchBtn' onClick={() => getData()}>Search</Button>
         </div>
         <div className='countryInfo'>
           <div className='infoLeft'>
-            {/* <CountryInfo countryData={countryData} /> */}
-            {countryData.length > 0 && (<div><h2>{countryData[0].area}</h2>
+            <h2>Country Information</h2>
+            {countryData.length > 0 && (<div className='leftContent'>
               <img src={countryData[0].flags.png} alt="flag" />
-              <h2>{countryData[0].altSpellings[2]}</h2></div>)}
-
+              <div className='leftInfo'>
+                <h3>Name : {countryData[0].altSpellings[2]}</h3>
+                <h3>Capital : {countryData[0].capital}</h3>
+                <h3>Region : {countryData[0].region}</h3>
+                <h3>Population : {countryData[0].population}</h3>
+                <h3>Location : <a target="_blank" href={countryData[0].maps.googleMaps} rel="noreferrer">{countryData[0].altSpellings[2]} Location</a> </h3>
+              </div>
+            </div>)}
           </div>
           <div className='infoRight'>
+            <h2>Country Photos</h2>
             <CountryPhotos />
           </div>
         </div>

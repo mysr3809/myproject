@@ -23,17 +23,49 @@
   align-items: center;
   left: 50%;
   transform: translate(-50%, 10px);
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  width: 25vw;
+}
+.searchBtn{
+  margin: 5px !important;
+  border: 1px solid #243763 !important;
+}
+.searchBtn:hover{
+  background-color: #243763 !important;
+  border: none;
+  color: white;
 }
 
 .countryInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: absolute;
-  border: 1px solid red;
   width: 100%;
   height: 65vh;
   top: 100px;
+  color: white;
 }
 .infoLeft{
-  
+border-right: 2px solid #243763 ;
+}
+.infoLeft h2{
+  border-bottom: 1px solid #243763;
+}
+.leftContent{
+padding-top: 10px;
+text-align: start;
+}
+.leftContent .leftInfo{
+padding-left: 20px;
+}
+.leftContent img{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  width: 30vw !important;
+}
+.infoRight h2{
+  border-bottom: 1px solid #243763;
 }
