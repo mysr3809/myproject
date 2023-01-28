@@ -7,7 +7,6 @@ const CountryPhotos = ({ inputValue }) => {
 
   useEffect(() => {
     getPhotos();
-    console.log(photos);
   }, [inputValue]);
 
   const getPhotos = async () => {

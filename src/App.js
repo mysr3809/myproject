@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import CountryHome from "./components/CountryHome";
-import Favorites from "./components/Favorites"
+import Favorites from "./components/Favorites";
+import { FavoriteProvider } from './context/FavoriteContext';
 import './App.css';
 
 // APIS
@@ -16,11 +17,14 @@ function App() {
   return (
     <div className='bg-opacity'>
       <div className="content">
+
         <Router>
-          <Routes>
-            <Route exact path="/" element={<CountryHome />} />
-            <Route path="/favorites" element={<Favorites />} />
-          </Routes>
+          <FavoriteProvider>
+            <Routes>
+              <Route exact path="/" element={<CountryHome />} />
+              <Route path="/favorites" element={<Favorites />} />
+            </Routes>
+          </FavoriteProvider>
         </Router>
       </div>
     </div>
