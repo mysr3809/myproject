@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "./CountryPhotos.css";
 import Carousel from 'react-bootstrap/Carousel';
+
 const CountryPhotos = ({ inputValue }) => {
   const [photos, setPhotos] = useState([]);
-
 
   useEffect(() => {
     getPhotos();
@@ -28,23 +28,6 @@ const CountryPhotos = ({ inputValue }) => {
             />
           </Carousel.Item >
         })}
-        {/* <Carousel.Item className='carouselInner'>
-        <Carousel.Caption>
-            <h4>Photos All Around The World</h4>
-          </Carousel.Caption>
-          <img
-            className="d-block "
-            src="https://picsum.photos/200"
-            alt="Second slide"
-          />
-        </Carousel.Item >
-        <Carousel.Item className='carouselInner'>
-          <img
-            className="d-block"
-            src="https://picsum.photos/200"
-            alt="Third slide"
-          />
-        </Carousel.Item> */}
       </Carousel>
     </div>
   )

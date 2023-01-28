@@ -13,6 +13,7 @@ const CountryHome = () => {
   const [countryData, setCountryData] = useState([]);
   const [countryName, setCountryName] = useState("");
   const [inputValue, setInputValue] = useState("");
+  const [flag, setFlag] = useState(true)
 
   const getData = async () => {
     try {
@@ -25,14 +26,16 @@ const CountryHome = () => {
   }
 
   const handleClick = () => {
-    setInputValue(countryName);
     getData();
+    setFlag(true);
 
   }
 
   const handleOnChange = (e) => {
     e.preventDefault();
-    setCountryName(e.target.value);
+    // setCountryName(e.target.value);
+    setInputValue(e.target.value);
+    setFlag(false)
   }
 
   return (
@@ -48,7 +51,7 @@ const CountryHome = () => {
             {countryData.length > 0 && (<div className='leftContent'>
               <img src={countryData[0].flags.png} alt="flag" />
               <div className='leftInfo'>
-                <h4>Name : {countryData[0].altSpellings[2]}</h4>
+                <h4>Name : {countryData[0].altSpellings[1]}</h4>
                 <h4>Capital : {countryData[0].capital}</h4>
                 <h4>Region : {countryData[0].region}</h4>
                 <h4>Population : {countryData[0].population}</h4>
@@ -58,8 +61,7 @@ const CountryHome = () => {
           </div>
           <div className='infoRight'>
             <h2>Country Photos</h2>
-
-            {countryData.length > 0 && <CountryPhotos inputValue={inputValue} />}
+            {flag && <CountryPhotos inputValue={inputValue} getData={getData} />}
 
           </div>
         </div>
