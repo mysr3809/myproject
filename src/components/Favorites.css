@@ -1,3 +1,6 @@
+.favContent{
+  text-align: center;
+}
 .favCountries {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -23,4 +26,9 @@ position: relative;
   color: white;
   border-bottom: 1px solid white;
   padding-top: 5px;
+}
+.favText{
+  font-size: 2rem;
+  color: red;
+  background: white;
 }

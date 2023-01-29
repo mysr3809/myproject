@@ -20,28 +20,32 @@ const Favorites = () => {
         setFlag((prev) => [...prev, data[0].flags.png])
       }
     }
-    favorite.map((country) => {
-      return getFlag(country)
-    })
+    if (favorite.length > 0) {
+      favorite.map((country) => {
+        return getFlag(country.name)
+      })
+    }
   }, [])
 
   return (
-    <div>
+    <div className='favContent'>
       <div className='favHeader'>
         <Link to="/">
           <Button className='homeBtn' variant="contained">Go Home</Button>
         </Link>
         <h2>Here is the Favorites</h2>
       </div>
-      <div className='favCountries'>
-        {favorite.map((fav, index) => {
-          return <div className='favCountry'>
-            <img className="icon" src={heartAdd} alt={heartAdd} onClick={() => removeFavorite(fav.name)} />
-            <img className="favFlag" src={fav.flag} alt={flag} key={index} />
-            <h2>{fav.name.toUpperCase()}</h2>
-          </div>
+      {favorite.length === 0 ? <span className='favText'>There is no Favorite Country.</span> :
+        <div className='favCountries'>
+          {favorite.map((fav, index) => {
+            return <div className='favCountry' key={index}>
+              <img className="icon" src={heartAdd} alt={heartAdd} onClick={() => removeFavorite(fav.name)} />
+              <img className="favFlag" src={fav.flag} alt={flag} />
+              <h2>{fav.name.toUpperCase()}</h2>
+            </div>
 
-        })}</div>
+          })}</div>
+      }
     </div>
   )
 }
