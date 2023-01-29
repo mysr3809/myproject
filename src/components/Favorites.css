@@ -19,3 +19,8 @@ position: relative;
   height: 20vh;
   padding: 20px;
 }
+.favHeader h2{
+  color: white;
+  border-bottom: 1px solid white;
+  padding-top: 5px;
+}

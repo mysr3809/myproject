@@ -47,7 +47,9 @@ const CountryHome = () => {
   return (
     <div className='homePage'>
       <Link to="/favorites">
-        <Button className='favBtn' variant="contained">Favorites</Button>
+        <Button className='favBtn' variant="contained">
+          Favorite Country={favorite.length}
+        </Button>
       </Link>
       <div className='countryContent'>
         <div className='input'>
