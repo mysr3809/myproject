@@ -1,0 +1,21 @@
+.favCountries {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  text-align: center;
+}
+.favCountry {
+width: 500px;
+position: relative;
+}
+.favFlag{
+  width: 200px;
+}
+.icon{
+  position: absolute;
+}
+.favHeader{
+  text-align: center;
+  width: 100%;
+  height: 20vh;
+  padding: 20px;
+}

@@ -10,7 +10,7 @@ h1{
 
 .bg-opacity{
     position: relative;
-    background-color: #000;
+    background-color: grey;
 }
 
 .bg-opacity::before{

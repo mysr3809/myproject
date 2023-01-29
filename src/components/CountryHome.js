@@ -40,7 +40,7 @@ const CountryHome = () => {
   const handleOnChange = (e) => {
     e.preventDefault();
     // setCountryName(e.target.value);
-    setInputValue(e.target.value);
+    setInputValue(e.target.value.toLowerCase());
     setFlag(false)
   }
 
