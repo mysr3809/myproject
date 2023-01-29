@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import CountryHome from "./components/CountryHome";
 import Favorites from "./components/Favorites";
+import GetDetail from './components/GetDetail';
 import { FavoriteProvider } from './context/FavoriteContext';
 import './App.css';
 
@@ -25,6 +26,8 @@ function App() {
             <Routes>
               <Route exact path="/" element={<CountryHome />} />
               <Route path="/favorites" element={<Favorites />} />
+              <Route path="/detail" element={< GetDetail />} />
+
             </Routes>
           </FavoriteProvider>
         </Router>
