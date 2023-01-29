@@ -17,7 +17,7 @@ const CountryHome = () => {
   const { favorite, addFavorite, removeFavorite } = useContext(FavoriteContext)
 
   const isFavorite = (countryName) => {
-    return favorite.some((country) => country === countryName);
+    return favorite.some((countryInfo) => countryInfo.name === countryName);
   }
 
   const getData = async () => {
@@ -60,7 +60,7 @@ const CountryHome = () => {
             {countryData.length > 0 && (<div className='leftContent'>
               <div className='imgContent'>
                 {!isFavorite(countryName) ?
-                  <img className="icon" src={heartAdd} alt={heartAdd} onClick={(country) => addFavorite(countryName)} />
+                  <img className="icon" src={heartAdd} alt={heartAdd} onClick={(country) => addFavorite(countryName, countryData[0].flags.png)} />
                   :
                   <img className="icon" src={heartRemove} alt={heartAdd} onClick={() => removeFavorite(countryName)} />
                 }

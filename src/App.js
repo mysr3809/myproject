@@ -6,6 +6,7 @@ import Favorites from "./components/Favorites";
 import { FavoriteProvider } from './context/FavoriteContext';
 import './App.css';
 
+
 // APIS
 // https://www.travel-advisory.info/api
 // https://restcountries.com/v3.1/alpha/{TR}

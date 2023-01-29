@@ -2,15 +2,14 @@ import React, { useState, createContext } from 'react'
 
 export const FavoriteContext = createContext()
 
-
 export const FavoriteProvider = ({ children }) => {
   const [favorite, setFavorite] = useState([]);
 
-  const addFavorite = (countryName) => {
-    setFavorite([...favorite, countryName])
+  const addFavorite = (countryName, flag) => {
+    setFavorite([...favorite, { name: countryName, flag: flag }])
   }
   const removeFavorite = (countryName) => {
-    setFavorite(favorite.filter((fav) => fav !== countryName))
+    setFavorite(favorite.filter((fav) => fav.name !== countryName))
   }
 
   return (

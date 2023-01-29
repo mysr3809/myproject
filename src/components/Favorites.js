@@ -8,7 +8,8 @@ const Favorites = () => {
 
   useEffect(() => {
     const getFlag = async (country) => {
-      const response = await fetch(`https://restcountries.com/v3.1/name/${country}`)
+      setFlag([]);
+      const response = await fetch(`https://restcountries.com/v3.1/name/${country}`);
       const data = await response.json();
       if (!flag.includes(data[0].flags.png)) {
         setFlag((prev) => [...prev, data[0].flags.png])
@@ -22,8 +23,11 @@ const Favorites = () => {
   return (
     <div>
       <h2>Here is the Favorites</h2>
-      {favorite.map((fav) => {
-
+      {favorite.map((fav, index) => {
+        return <div>
+          <img src={fav.flag} alt={flag} key={index} />
+          <h2>{fav.name}</h2>
+        </div>
       })}
     </div>
   )
