@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
 import "./CountryHome.css"
-import CountryInfo from "./CountryInfo";
 import CountryPhotos from './CountryPhotos';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
@@ -8,6 +7,9 @@ import heartAdd from '../assets/heart-regular.svg'
 import heartRemove from '../assets/heart-solid.svg'
 import { FavoriteContext } from '../context/FavoriteContext';
 import { Link } from "react-router-dom";
+import NavBar from './NavBar';
+import Container from "@mui/material/Container"
+// import OutlinedCard from './OutlinedCard';
 
 const CountryHome = () => {
   const [countryData, setCountryData] = useState([]);
@@ -44,50 +46,63 @@ const CountryHome = () => {
     setFlag(false)
   }
 
-  return (
-    <div className='homePage'>
-      <Link to="/favorites">
-        <Button className='favBtn' variant="contained">
-          Favorite Country={favorite.length}
-        </Button>
-      </Link>
-      <div className='countryContent'>
-        <div className='input'>
-          <Input color="primary" type="text" name="name" onChange={(e) => handleOnChange(e)} />
-          <Button className='searchBtn' onClick={handleClick}>Search</Button>
-        </div>
-        <div className='countryInfo'>
-          <div className='infoLeft'>
-            <h2>Country Information</h2>
-            {countryData.length > 0 && (<div className='leftContent'>
-              <div className='imgContent'>
-                {!isFavorite(countryName) ?
-                  <img className="icon" src={heartAdd} alt={heartAdd} onClick={(country) => addFavorite(countryName, countryData[0].flags.png)} />
-                  :
-                  <img className="icon" src={heartRemove} alt={heartAdd} onClick={() => removeFavorite(countryName)} />
-                }
-                <img className='countryFlag' src={countryData[0].flags.png} alt="flag" />
-              </div>
-              <div className='leftInfo'>
-                <h4>Name : {countryData[0].altSpellings[1]}</h4>
-                <h4>Capital : {countryData[0].capital}</h4>
-                <h4>Region : {countryData[0].region}</h4>
-                <h4>Population : {countryData[0].population}</h4>
-                <h4>Location : <a target="_blank" href={countryData[0].maps.googleMaps} rel="noreferrer">{countryData[0].altSpellings[2]} Location</a> </h4>
-                <Link to={`/country/${countryData[0].altSpellings[0]}`}>
-                  <Button variant="contained">Read Travel Detail</Button>
-                </Link>
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleClick();
+    }
+  }
 
-              </div>
-            </div>)}
-          </div>
-          <div className='infoRight'>
-            <h2>Country Photos</h2>
-            {flag && <CountryPhotos inputValue={inputValue} />}
+  return (
+    <div>
+      <NavBar />
+      <div>
+        <div className='box'>
+          <div className='input'>
+            <Input color="primary" type="text" name="name" onKeyDown={handleKeyDown} onChange={(e) => handleOnChange(e)} />
+            <Button href='#countryInfo' className='searchBtn' onClick={handleClick}>Search</Button>
           </div>
         </div>
+        {/* <OutlinedCard name={countryData[0].altSpellings[1]} capital={countryData[0].capital} region={countryData[0].region} population={countryData[0].population} location={countryData[0].maps.googleMaps} image={countryData[0].flags.png}/> */}
+        <Container fixed>
+          <div className='mainInfoDiv' id='mainInfoDiv'>
+            <h3 style={{ textAlign: 'center', marginBottom: '30px' }}>COUNTRY INFORMATION</h3>
+            <div className='countryInfo' id='countryInfo'>
+              <div className='infoLeft'>
+                {countryData.length > 0 && (<div className='leftContent'>
+                  <div className='imgContent'>
+                    {!isFavorite(countryName) ?
+                      <img className="icon" src={heartAdd} alt={heartAdd} onClick={(country) => addFavorite(countryName, countryData[0].flags.png)} />
+                      :
+                      <img className="icon" src={heartRemove} alt={heartAdd} onClick={() => removeFavorite(countryName)} />
+                    }
+                    <img className='countryFlag' src={countryData[0].flags.png} alt="flag" />
+                  </div>
+                  <div className='leftInfo'>
+                    <h4>Name : {countryData[0].altSpellings[1]}</h4>
+                    <h4>Capital : {countryData[0].capital}</h4>
+                    <h4>Region : {countryData[0].region}</h4>
+                    <h4>Population : {countryData[0].population}</h4>
+                    <h4>Location : <a target="_blank" href={countryData[0].maps.googleMaps} rel="noreferrer">{countryData[0].altSpellings[2]} Location</a> </h4>
+                    <Link to={`/country/${countryData[0].altSpellings[0]}`}>
+                      <Button variant="contained">Read Travel Detail</Button>
+                    </Link>
+                  </div>
+                </div>)}
+              </div>
+              <div className='infoRight'>
+                {flag &&
+                  <>
+                    <CountryPhotos inputValue={inputValue} />
+                  </>}
+              </div>
+            </div>
+
+          </div>
+        </Container>
+
       </div>
-    </div >
+
+    </div>
   );
 };
 

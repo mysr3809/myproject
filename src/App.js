@@ -6,6 +6,7 @@ import Favorites from "./components/Favorites";
 import GetDetail from './components/GetDetail';
 import { FavoriteProvider } from './context/FavoriteContext';
 import './App.css';
+import RandomCountry from './components/RandomCountry';
 
 
 // APIS
@@ -27,6 +28,7 @@ function App() {
               <Route exact path="/" element={<CountryHome />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/country/:id" element={< GetDetail />} />
+              <Route path="/random" element={< RandomCountry />} />
             </Routes>
           </FavoriteProvider>
         </Router>
