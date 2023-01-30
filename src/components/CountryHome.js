@@ -74,7 +74,10 @@ const CountryHome = () => {
                 <h4>Region : {countryData[0].region}</h4>
                 <h4>Population : {countryData[0].population}</h4>
                 <h4>Location : <a target="_blank" href={countryData[0].maps.googleMaps} rel="noreferrer">{countryData[0].altSpellings[2]} Location</a> </h4>
-                <Button variant="contained">Get Detail</Button>
+                <Link to={`/country/${countryData[0].altSpellings[0]}`}>
+                  <Button variant="contained">Read Travel Detail</Button>
+                </Link>
+
               </div>
             </div>)}
           </div>

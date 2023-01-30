@@ -26,8 +26,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<CountryHome />} />
               <Route path="/favorites" element={<Favorites />} />
-              <Route path="/detail" element={< GetDetail />} />
-
+              <Route path="/country/:id" element={< GetDetail />} />
             </Routes>
           </FavoriteProvider>
         </Router>
