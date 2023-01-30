@@ -30,13 +30,15 @@ const GetDetail = () => {
 
       <div className='detailContent'>
         {console.log(countryInfo[0])}
-        {countryInfo !== null &&
+        {countryInfo.length > 0 &&
           (
-            <div>
-              <h3>{countryInfo[0].name}</h3>
-              <h3>{countryInfo[0].advisory.message}</h3>
-              <h3>{countryInfo[0].name}</h3>
-            </div>
+            <ul>
+              <li>Country: {countryInfo[0].name}</li>
+              <li>Travel Activity: {countryInfo[0].advisory.sources_active}</li>
+              <li>{countryInfo[0].name}</li>
+              <li>Travel Advice: {countryInfo[0].advisory.message}</li>
+              <li>Travel Risk: {countryInfo[0].advisory.score}</li>
+            </ul>
           )
         }
       </div>
