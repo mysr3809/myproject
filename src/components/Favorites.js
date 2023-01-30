@@ -43,7 +43,6 @@ const Favorites = () => {
               <img className="favFlag" src={fav.flag} alt={flag} />
               <h2>{fav.name.toUpperCase()}</h2>
             </div>
-
           })}</div>
       }
     </div>

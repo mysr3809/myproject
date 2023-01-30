@@ -6,13 +6,45 @@
   align-items: center;
   flex-direction: column;
 }
+.detailBox h1 {
+  color: white;
+}
 
 .detailContent {
   width: 60%;
-  height: 60%;
   background-color: white;
 }
+.detailContent ul{
+  padding-left: 1rem;
+}
 
-.detailContent li{
+.detailContent li {
   font-size: 2rem;
+  list-style-type: none;
+}
+.questions {
+  background-color: red;
+  color: white;
+}
+
+.detailContent a {
+  color: white;
+}
+
+.detailHeader {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  background: darkgreen;
+  align-items: center;
+  padding: 5px;
+}
+
+.homeBtn {
+  margin: 5px;
+}
+.moreDetailBtn {
+  position: relative;
+  left: 50%;
+  transform: translate(-60%, 0px);
 }

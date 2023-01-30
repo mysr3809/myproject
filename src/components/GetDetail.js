@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import "./getDetail.css"
+import { useParams, Link } from 'react-router-dom';
+import "./getDetail.css";
+import Button from '@mui/material/Button';
 
 
 const GetDetail = () => {
@@ -26,18 +27,23 @@ const GetDetail = () => {
 
   return (
     <div className='detailBox'>
-      <h2>Travel Advice</h2>
-
+      <div className='detailHeader'>
+        <h1>Travel Advice</h1>
+        <Link to="/">
+          <Button className='homeBtn' variant="contained">Go Home</Button>
+        </Link>
+      </div>
       <div className='detailContent'>
         {console.log(countryInfo[0])}
         {countryInfo.length > 0 &&
           (
             <ul>
-              <li>Country: {countryInfo[0].name}</li>
-              <li>Travel Activity: {countryInfo[0].advisory.sources_active}</li>
-              <li>{countryInfo[0].name}</li>
-              <li>Travel Advice: {countryInfo[0].advisory.message}</li>
-              <li>Travel Risk: {countryInfo[0].advisory.score}</li>
+              <li><span className='questions'>Country </span> : {countryInfo[0].name}</li>
+              <li><span className='questions'>Travel Activity </span> : {countryInfo[0].advisory.sources_active}(point)/10</li>
+              <li><span className='questions'>Travel Advice </span> : {countryInfo[0].advisory.message}</li>
+              <li><span className='questions'>Travel Score </span> : {countryInfo[0].advisory.score}/5</li>
+              <li><span className='questions'>Last Update </span> : {countryInfo[0].advisory.updated}</li>
+              <Button className='moreDetailBtn' variant="contained"><a href={countryInfo[0].advisory.source} target="_blank" rel="noreferrer">See More Detail</a></Button>
             </ul>
           )
         }
