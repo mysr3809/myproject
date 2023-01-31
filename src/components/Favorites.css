@@ -10,9 +10,10 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   text-align: center;
+  width: 100%;
 }
 .favCountry {
-width: 500px;
+width: 100%;
 position: relative;
 }
 .favFlag{
@@ -20,6 +21,7 @@ position: relative;
 }
 .icon{
   position: absolute;
+  width: 7%;
 }
 .favHeader{
   text-align: center;
@@ -39,4 +41,29 @@ position: relative;
 }
 .favCountries h2{
   color: white;
+}
+
+@media only screen and (max-width: 850px) {
+  .favCountries {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: center;
+    width: 100%;
+  }
+  .icon{
+    position: absolute;
+    width: 6%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .favCountries {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    text-align: center;
+    width: 100%;
+  }
+  .icon{
+    position: absolute;
+    width: 5%;
+  }
 }
