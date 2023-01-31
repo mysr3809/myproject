@@ -14,7 +14,7 @@
 }
 
 .detailContent {
-  width: 60%;
+  width: 90%;
   background-color: #ffffff7d;
 }
 .detailContent ul{
@@ -22,7 +22,7 @@
 }
 
 .detailContent li {
-  font-size: 2rem;
+  font-size: 3vw;
   list-style-type: none;
 }
 .questions {
@@ -36,7 +36,7 @@
 
 .detailHeader {
   display: flex;
-  width: 60%;
+  width: 90%;
   justify-content: space-between;
   background: rgb(46, 139, 87);
   align-items: center;
