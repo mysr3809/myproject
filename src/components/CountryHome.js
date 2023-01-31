@@ -33,10 +33,11 @@ const CountryHome = () => {
   }
 
   const handleClick = () => {
-    setCountryName(inputValue);
-    getData();
-    setFlag(true);
-
+    if (inputValue) {
+      setCountryName(inputValue);
+      getData();
+      setFlag(true);
+    }
   }
 
   const handleOnChange = (e) => {
