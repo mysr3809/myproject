@@ -46,6 +46,8 @@ const CountryHome = () => {
         setIsLoading(false);
       }, 1000);
       setFlag(true);
+    } else {
+      alert("You should Text a Country Name")
     }
   }
 
@@ -69,7 +71,7 @@ const CountryHome = () => {
         <div className='box'>
           <div className='input'>
             <Input placeholder='Country Name' color="primary" type="text" name="name" onKeyDown={handleKeyDown} onChange={(e) => handleOnChange(e)} />
-            <Button href='#countryInfo' className='searchBtn' onClick={handleClick}>Search</Button>
+            <Button className='searchBtn' onClick={handleClick}>Search</Button>
             {isLoading &&
               <LinearProgress className="loadingIcon" sx={{ display: 'flex' }}>
                 <CircularProgress />
