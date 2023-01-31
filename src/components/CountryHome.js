@@ -58,7 +58,7 @@ const CountryHome = () => {
       <div>
         <div className='box'>
           <div className='input'>
-            <Input color="primary" type="text" name="name" onKeyDown={handleKeyDown} onChange={(e) => handleOnChange(e)} />
+            <Input placeholder='Country Name' color="primary" type="text" name="name" onKeyDown={handleKeyDown} onChange={(e) => handleOnChange(e)} />
             <Button href='#countryInfo' className='searchBtn' onClick={handleClick}>Search</Button>
           </div>
         </div>

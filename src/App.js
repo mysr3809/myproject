@@ -19,21 +19,21 @@ import RandomCountry from './components/RandomCountry';
 function App() {
 
   return (
-    <div className='bg-opacity'>
-      <div className="content">
 
-        <Router>
-          <FavoriteProvider>
-            <Routes>
-              <Route exact path="/" element={<CountryHome />} />
-              <Route path="/favorites" element={<Favorites />} />
-              <Route path="/country/:id" element={< GetDetail />} />
-              <Route path="/random" element={< RandomCountry />} />
-            </Routes>
-          </FavoriteProvider>
-        </Router>
-      </div>
+    <div className="content">
+
+      <Router>
+        <FavoriteProvider>
+          <Routes>
+            <Route exact path="/" element={<CountryHome />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/country/:id" element={< GetDetail />} />
+            <Route path="/random" element={< RandomCountry />} />
+          </Routes>
+        </FavoriteProvider>
+      </Router>
     </div>
+
   );
 }
 

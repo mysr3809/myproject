@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: url("https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1826&q=80") no-repeat center center;
+  background-size: cover;
+
 }
 .detailBox h1 {
   color: white;
@@ -12,7 +15,7 @@
 
 .detailContent {
   width: 60%;
-  background-color: white;
+  background-color: #ffffff7d;
 }
 .detailContent ul{
   padding-left: 1rem;
@@ -35,7 +38,7 @@
   display: flex;
   width: 60%;
   justify-content: space-between;
-  background: darkgreen;
+  background: rgb(46, 139, 87);
   align-items: center;
   padding: 5px;
 }

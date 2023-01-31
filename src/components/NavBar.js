@@ -13,7 +13,7 @@ const NavBar = () => {
   const { favorite } = useContext(FavoriteContext)
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" style={{ backgroundColor: "black" }} >
+      <AppBar position="fixed" style={{ backgroundColor: "#2e8b57" }} >
         <Toolbar>
           <IconButton
             size="large"

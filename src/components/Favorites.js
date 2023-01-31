@@ -33,7 +33,7 @@ const Favorites = () => {
         <Link to="/">
           <Button className='homeBtn' variant="contained">Go Home</Button>
         </Link>
-        <h2>Here is the Favorites</h2>
+        <h2>HERE IS THE FAVORITE COUNTRIES</h2>
       </div>
       {favorite.length === 0 ? <span className='favText'>There is no Favorite Country.</span> :
         <div className='favCountries'>
