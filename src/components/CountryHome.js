@@ -81,7 +81,7 @@ const CountryHome = () => {
         <Container fixed>
           {countryData.status ? <Alert className='alertBox' severity="error">Please Write a Correct Country Name!</Alert> :
             <div className='mainInfoDiv' id='mainInfoDiv'>
-              <h3 style={{ textAlign: 'center', marginBottom: '30px' }}>COUNTRY INFORMATION</h3>
+              {countryData.length > 0 && <h3 style={{ textAlign: 'center', marginBottom: '30px' }}>COUNTRY INFORMATION</h3>}
               {!isLoading &&
                 <div className='countryInfo' id='countryInfo'>
                   <div className='infoLeft'>

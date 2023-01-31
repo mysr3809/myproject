@@ -13,7 +13,7 @@ const NavBar = () => {
   const { favorite } = useContext(FavoriteContext)
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" style={{ backgroundColor: "#2e8b57" }} >
+      <AppBar position="fixed" style={{ backgroundColor: "white" }} >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <img className='logo' style={{ width: "130px" }} src={logo} alt="logo" />
