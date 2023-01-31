@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import "./CountryHome.css"
 import CountryPhotos from './CountryPhotos';
 import Input from '@mui/material/Input';

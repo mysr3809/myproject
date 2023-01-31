@@ -6,7 +6,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { FavoriteContext } from '../context/FavoriteContext';
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import Badge from '@mui/material/Badge';
+import { red } from '@mui/material/colors';
 
 const NavBar = () => {
 
@@ -19,9 +22,9 @@ const NavBar = () => {
             <img className='logo' style={{ width: "130px" }} src={logo} alt="logo" />
           </Typography>
           <Link to="/favorites">
-            <Button variant="contained">
-              Favorite Country={favorite.length}
-            </Button>
+            <Badge badgeContent={favorite.length} color="success">
+              <FavoriteIcon sx={{ color: red[600], fontSize: 40 }} />
+            </Badge>
           </Link>
         </Toolbar>
       </AppBar>
