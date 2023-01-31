@@ -30,7 +30,6 @@ const CountryHome = () => {
     try {
       const response = await fetch(`https://restcountries.com/v3.1/name/${inputValue}`);
       const data = await response.json();
-      console.log("data", data)
       setCountryData(data);
     } catch (error) {
       console.log(error);
@@ -70,7 +69,7 @@ const CountryHome = () => {
         <h2 className='siteInfo'><span>DON'T TRAVEL WITHOUT</span><br></br> <span>TRAVELLER</span></h2>
         <div className='box'>
           <div className='input'>
-            <Input placeholder='Country Name' color="primary" type="text" name="name" onKeyDown={handleKeyDown} onChange={(e) => handleOnChange(e)} />
+            <Input placeholder='Country Name' className='inputCountry' color="primary" type="text" name="name" onKeyDown={handleKeyDown} onChange={(e) => handleOnChange(e)} />
             <Button className='searchBtn' onClick={handleClick}>Search</Button>
             {isLoading &&
               <LinearProgress className="loadingIcon" sx={{ display: 'flex' }}>
@@ -111,20 +110,17 @@ const CountryHome = () => {
                   <div className='infoRight'>
                     {flag &&
                       <>
-                        <CountryPhotos inputValue={inputValue} />
+                        <CountryPhotos countryName={countryName} />
                       </>}
                   </div>
                 </div>
               }
-
             </div>
           }
-
         </Container>
       </div>
     </div>
   );
 };
-
 
 export default CountryHome

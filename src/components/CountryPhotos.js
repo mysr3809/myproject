@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import "./CountryPhotos.css";
 import Carousel from 'react-bootstrap/Carousel';
 
-const CountryPhotos = ({ inputValue }) => {
+const CountryPhotos = ({ countryName }) => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     getPhotos();
-  }, [inputValue]);
+  }, [countryName]);
 
   const getPhotos = async () => {
-    const response = await fetch(`https://api.unsplash.com/search/photos?query=${inputValue}&client_id=${process.env.REACT_APP_UNSPLASH_KEY} `)
+    const response = await fetch(`https://api.unsplash.com/search/photos?query=${countryName}&client_id=${process.env.REACT_APP_UNSPLASH_KEY} `)
     const data = await response.json();
     setPhotos(data.results);
   }

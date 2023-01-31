@@ -14,8 +14,8 @@
   border-radius: 50px;
   min-width: 40vw;
 }
-.css-1x51dt5-MuiInputBase-input-MuiInput-input {
-  width: 30vw !important;
+.inputCountry {
+  width: 80% !important;
 }
 .mainInfoDiv {
   margin-top: 5%;
