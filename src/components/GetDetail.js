@@ -34,7 +34,6 @@ const GetDetail = () => {
         </Link>
       </div>
       <div className='detailContent'>
-        {console.log(countryInfo[0])}
         {countryInfo.length > 0 &&
           (
             <ul>

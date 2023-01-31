@@ -13,7 +13,7 @@ import { red } from '@mui/material/colors';
 
 const NavBar = () => {
 
-  const { favorite } = useContext(FavoriteContext)
+  const { favorite } = useContext(FavoriteContext) // with useContext fav array can reachable from navbar
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" style={{ backgroundColor: "white" }} >

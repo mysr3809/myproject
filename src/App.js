@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import CountryHome from "./components/CountryHome";
@@ -7,20 +6,9 @@ import GetDetail from './components/GetDetail';
 import { FavoriteProvider } from './context/FavoriteContext';
 import './App.css';
 
-
-// APIS
-// https://www.travel-advisory.info/api
-// https://restcountries.com/v3.1/alpha/{TR}
-// Weather API
-// https://countryapi.io/api/name/austria?apikey=l4E3hZr0ZZ19CCPpqLhRf6Dsjx4svScxpOKOJ8nU
-
-
-function App() {
-
+const App = () => { // with these paths we can define our pages route with url params
   return (
-
     <div className="content">
-
       <Router>
         <FavoriteProvider>
           <Routes>
@@ -31,7 +19,6 @@ function App() {
         </FavoriteProvider>
       </Router>
     </div>
-
   );
 }
 

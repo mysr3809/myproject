@@ -8,6 +8,7 @@ export const FavoriteProvider = ({ children }) => {
   const addFavorite = (countryName, flag) => {
     setFavorite([...favorite, { name: countryName, flag: flag }])
   }
+
   const removeFavorite = (countryName) => {
     setFavorite(favorite.filter((fav) => fav.name !== countryName))
   }

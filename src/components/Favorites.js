@@ -5,8 +5,6 @@ import heartAdd from '../assets/heart-solid.svg';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
-
-
 const Favorites = () => {
   const { favorite, removeFavorite } = useContext(FavoriteContext);
   const [flag, setFlag] = useState([]);
@@ -25,7 +23,7 @@ const Favorites = () => {
         return getFlag(country.name)
       })
     }
-  }, [])
+  }, [favorite]) // when fav arr changes it automatically render the component without reload
 
   return (
     <div className='favContent'>
