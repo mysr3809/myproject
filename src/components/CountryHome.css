@@ -1,9 +1,10 @@
 .box {
   display: flex;
   justify-content: center;
-  align-items:center; 
+  align-items: center;
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=MnwxM[â€¦]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1750&q=80') no-repeat center center;
+  background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=MnwxM[â€¦]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1750&q=80')
+    no-repeat center center;
   background-size: cover;
 }
 
@@ -13,14 +14,14 @@
   background: white;
   border-radius: 50px;
   min-width: 40vw;
-  
 }
 
-.css-1x51dt5-MuiInputBase-input-MuiInput-input{ /* material ui input className */ 
-width: 30vw !important;
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  /* material ui input className */
+  width: 30vw !important;
 }
 
-.mainInfoDiv{
+.mainInfoDiv {
   margin-top: 5%;
 }
 
@@ -30,36 +31,46 @@ width: 30vw !important;
   height: 80vh;
 }
 
-.leftContent{
+.leftContent {
   height: 100%;
   padding-top: 10px;
   text-align: start;
 }
-.imgContent{
+.imgContent {
   position: relative;
   height: 40%;
   width: 100%;
 }
-.leftContent .leftInfo{
-padding-left: 20px;
+.leftContent .leftInfo {
+  padding-left: 20px;
 }
-.leftInfo a{
+.leftInfo a {
   color: black;
   text-decoration: none;
 }
-.countryFlag{
-  width: 40%;
+.countryFlag {
+  width: 50%;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0px)
+  transform: translate(-50%, 0px);
 }
-.icon{
+.icon {
   position: absolute;
-    width: 27px;
-    left: 75%;
-    cursor: pointer;
+  width: 5%;
+  left: 85%;
+  cursor: pointer;
 }
 
-.infoRight img{
+.infoRight img {
   width: 200px;
+}
+
+.alertBox {
+  display: flex;
+  justify-content: center;
+  top: 60%;
+  width: 45%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 90%);
 }
