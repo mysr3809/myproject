@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/material/Menu';
 import { Link } from "react-router-dom";
 import { FavoriteContext } from '../context/FavoriteContext';
+import logo from "../assets/logo.png"
+
 const NavBar = () => {
 
   const { favorite } = useContext(FavoriteContext)
@@ -24,7 +26,7 @@ const NavBar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            TRAVELLER
+            <img className='logo' style={{ width: "130px" }} src={logo} alt="logo" />
           </Typography>
           <Link to="/favorites">
             <Button variant="contained">
