@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef } from 'react'
 import "./CountryHome.css"
 import CountryPhotos from './CountryPhotos';
 import Input from '@mui/material/Input';
@@ -20,7 +20,7 @@ const CountryHome = () => {
   const [flag, setFlag] = useState(null) //used flag to control fetch photos depend on search input 
   const { favorite, addFavorite, removeFavorite } = useContext(FavoriteContext);
   const [isLoading, setIsLoading] = useState(false);
-
+  const element = useRef()
 
   const isFavorite = (countryName) => { //to check country favorite or not for icon style
     return favorite.some((countryInfo) => countryInfo.name === countryName);
@@ -38,7 +38,6 @@ const CountryHome = () => {
 
   const handleClick = () => { // for getting data show them. search btn trigger it 
     if (inputValue) {
-      setIsLoading(true)
       setCountryName(inputValue);
       setTimeout(() => {
         getData();
@@ -61,6 +60,8 @@ const CountryHome = () => {
     }
   }
 
+  console.log(element)
+
   return (
     <div>
       <NavBar />  {/* use component instead of write code blocks */}
@@ -70,7 +71,7 @@ const CountryHome = () => {
           <div className='input'>
             <Input placeholder='Country Name' className='inputCountry' color="primary" type="text" name="name" onKeyDown={handleKeyDown}
               onChange={(e) => handleOnChange(e)} />
-            <Button className='searchBtn' onClick={handleClick}>Search</Button>
+            <Button className='searchBtn' onClick={handleClick} ref={element}>Search</Button>
             {isLoading &&
               <LinearProgress className="loadingIcon" sx={{ display: 'flex' }}>
                 <CircularProgress />

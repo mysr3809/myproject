@@ -44,6 +44,10 @@
   grid-template-columns: 1fr 1fr;
   height: 80vh;
 }
+
+.infoContainer{
+  display: none !important;
+}
 .leftContent {
   height: 100%;
   padding-top: 10px;
