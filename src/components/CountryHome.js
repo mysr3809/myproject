@@ -38,6 +38,7 @@ const CountryHome = () => {
 
   const handleClick = () => { // for getting data show them. search btn trigger it 
     if (inputValue) {
+      setIsLoading(true)
       setCountryName(inputValue);
       setTimeout(() => {
         getData();
@@ -81,7 +82,7 @@ const CountryHome = () => {
         <Container fixed> {/* fixed for all devices */}
           {countryData.status ? <Alert className='alertBox' severity="error">Please Write a Correct Country Name!</Alert> :
             <div className='mainInfoDiv' id='mainInfoDiv'>
-              {countryData.length > 0 && <h3 style={{ textAlign: 'center', marginBottom: '30px' }}>COUNTRY INFORMATION</h3>}
+              {!isLoading && <h3 style={{ textAlign: 'center', marginBottom: '30px' }}>COUNTRY INFORMATION</h3>}
               {!isLoading &&
                 <div className='countryInfo' id='countryInfo'>
                   <div className='infoLeft'>
@@ -109,7 +110,7 @@ const CountryHome = () => {
                     </div>)}
                   </div>
                   <div className='infoRight'>
-                    {flag &&
+                    {(flag || countryData.length > 0) &&
                       <>
                         <CountryPhotos countryName={countryName} /> {/*send props ti component*/}
                       </>}
